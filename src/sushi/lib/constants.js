@@ -42,12 +42,14 @@ export const contractAddresses = {
   sushi: {
     42: '0xC28E27870558cF22ADD83540d2126da2e4b464c2', // aelf sushi new one 9.9
     // 42: '0x43a7903E3a839a67192151eE300e11198985E54b', // sushi
-    1: '0x6b3595068778dd592e39a122f4f5a5cf09c90fe2', // sushi use
+    1: '0xC28E27870558cF22ADD83540d2126da2e4b464c2', // aelf sashimi
+    // 1: '0x6b3595068778dd592e39a122f4f5a5cf09c90fe2', // sushi use
   },
   masterChef: {
     42: '0x1DaeD74ed1dD7C9Dabbe51361ac90A69d851234D', // aelf sushi new one 9.9
     // 42: '0x245A074cA9814fB46A21562bC70fAB92F8A3F779', // sushi
-    1: '0xc2edad668740f1aa35e4d8f227fb8e17dca888cd', // sushi use
+    1: '0x1daed74ed1dd7c9dabbe51361ac90a69d851234d', // aelf master
+    // 1: '0xc2edad668740f1aa35e4d8f227fb8e17dca888cd', // sushi use
   },
   weth: {
     42: '0xa050886815cfc52a24b9c4ad044ca199990b6690', // aelf sushi
@@ -76,39 +78,54 @@ UNI-V2 LP Address on mainnet for reference
 
 export const supportedPools = [
   // Test Only
-  {
-    pid: 10,
-    lpAddresses: {
-      42: '0xF5fE4e3237BDE3AF05Fe190585FA5319b6bF6Dbc', // ABC-ELF
-      1: '0xce84867c3c02b05dc570d0135103d3fb9cc19433', // Null
-    },
-    tokenAddresses: {
-      42: '0x4615fF2bf25B5b40E08Bf50C7eBb8Bd6C97Eb14F', // ABC token
-      // 42: '0x76cE90eC600f6D8Af072eAA811485C5e0EE17d30', // sushi
-      1: '0x6b3595068778dd592e39a122f4f5a5cf09c90fe2', // Null
-    },
-    // elf:42: 0xB5685232b185cAdF7C5F58217722Ac40BC4ec45e
-    name: 'ABC Test Only!',
-    symbol: 'ABC-ELF UNI-V2 LP',
-    tokenSymbol: 'ABC',
-    icon: '🍣',
-  },
-  // ELF
-  // TODO: SASHIMI add main net info
+  // {
+  //   pid: 10,
+  //   lpAddresses: {
+  //     42: '0xF5fE4e3237BDE3AF05Fe190585FA5319b6bF6Dbc', // ABC-ELF
+  //     1: '0xce84867c3c02b05dc570d0135103d3fb9cc19433', // Null
+  //   },
+  //   tokenAddresses: {
+  //     42: '0x4615fF2bf25B5b40E08Bf50C7eBb8Bd6C97Eb14F', // ABC token
+  //     // 42: '0x76cE90eC600f6D8Af072eAA811485C5e0EE17d30', // sushi
+  //     1: '0x6b3595068778dd592e39a122f4f5a5cf09c90fe2', // Null
+  //   },
+  //   // elf:42: 0xB5685232b185cAdF7C5F58217722Ac40BC4ec45e
+  //   name: 'ABC Test Only!',
+  //   symbol: 'ABC-ELF UNI-V2 LP',
+  //   tokenSymbol: 'ABC',
+  //   icon: '🍣',
+  // },
   {
     pid: 9,
     lpAddresses: {
       42: '0xb21f5d46e1756cfeb34496636d38f97dc8552415',
-      1: '0xce84867c3c02b05dc570d0135103d3fb9cc19433', // Null
+      1: '0x4b618087DaE7765823BC47fFbF38C8Ee8489F5CA',
     },
     tokenAddresses: {
       42: '0xf2c73AF42FbAC096FE8F591899C5fc8bCB13884B',
-      1: '0x6b3595068778dd592e39a122f4f5a5cf09c90fe2', // Null
+      1: '0xC28E27870558cF22ADD83540d2126da2e4b464c2',
     },
     name: 'Sashimi Party!',
     symbol: 'SASHIMI-WETH UNI-V2 LP',
     tokenSymbol: 'SASHIMI',
     icon: '🍣',
+    pool: '17.7%',
+  },
+  {
+    pid: 10,
+    lpAddresses: {
+      42: '0xb21f5d46e1756cfeb34496636d38f97dc8552415',
+      1: '0x1629B0259E6E5c315B8Eea09fd1a4D0A26291F98',
+    },
+    tokenAddresses: {
+      42: '0xf2c73AF42FbAC096FE8F591899C5fc8bCB13884B',
+      1: '0xC28E27870558cF22ADD83540d2126da2e4b464c2',
+    },
+    name: 'elf love Sashimi!🧝🍱',
+    symbol: 'SASHIMI-ELF UNI-V2 LP',
+    tokenSymbol: 'SASHIMI',
+    icon: '🍱',
+    pool: '17.7%',
   },
   {
     pid: 7,
@@ -120,10 +137,11 @@ export const supportedPools = [
       42: '0xf2c73AF42FbAC096FE8F591899C5fc8bCB13884B',
       1: '0xbf2179859fc6D5BEE9Bf9158632Dc51678a4100e',
     },
-    name: 'elf garden 🧝🧝‍♂️🧝‍♀️',
+    name: 'elf garden 🧝🧝‍♂️🧝‍♀',
     symbol: 'ELF-ETH UNI-V2 LP',
     tokenSymbol: 'ELF',
     icon: '🧝',
+    pool: '15.4%',
   },
   {
     pid: 8,
@@ -139,6 +157,7 @@ export const supportedPools = [
     symbol: 'WBTC-ETH UNI-V2 LP',
     tokenSymbol: 'WBTC',
     icon: '₿',
+    pool: '7.7%',
   },
 
   // Others
@@ -156,6 +175,7 @@ export const supportedPools = [
     symbol: 'USDT-ETH UNI-V2 LP',
     tokenSymbol: 'USDT',
     icon: '🐢',
+    pool: '7.7%',
   },
   {
     pid: 1,
@@ -171,6 +191,7 @@ export const supportedPools = [
     symbol: 'USDC-ETH UNI-V2 LP',
     tokenSymbol: 'USDC',
     icon: '🐌',
+    pool: '8.7%',
   },
   {
     pid: 2,
@@ -186,6 +207,7 @@ export const supportedPools = [
     symbol: 'DAI-ETH UNI-V2 LP',
     tokenSymbol: 'DAI',
     icon: '🦆',
+    pool: '8.7%',
   },
   {
     pid: 3,
@@ -201,6 +223,7 @@ export const supportedPools = [
     symbol: 'YFI-ETH UNI-V2 LP',
     tokenSymbol: 'YFI',
     icon: '🐋',
+    pool: '4.1%',
   },
   {
     pid: 4,
@@ -216,6 +239,7 @@ export const supportedPools = [
     symbol: 'LEND-ETH UNI-V2 LP',
     tokenSymbol: 'LEND',
     icon: '🐗',
+    pool: '4.1%',
   },
   {
     pid: 5,
@@ -231,6 +255,7 @@ export const supportedPools = [
     symbol: 'LINK-ETH UNI-V2 LP',
     tokenSymbol: 'LINK',
     icon: '🐸',
+    pool: '4.1%',
   },
   {
     pid: 6,
@@ -246,5 +271,6 @@ export const supportedPools = [
     symbol: 'SNX-ETH UNI-V2 LP',
     tokenSymbol: 'SNX',
     icon: '🐍',
+    pool: '4.1%',
   },
 ]

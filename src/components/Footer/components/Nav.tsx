@@ -16,6 +16,12 @@ const Nav: React.FC = () => {
     <StyledNav>
       <StyledLink
         target="_blank"
+        href={`https://${ethscanType}etherscan.io/address/${contractAddressesTemp.sushi[chainId]}#code`}
+      >
+        Sashimi Contract
+      </StyledLink>
+      <StyledLink
+        target="_blank"
         href={`https://${ethscanType}etherscan.io/address/${contractAddressesTemp.masterChef[chainId]}#code`}
       >
         MasterChef Contract
