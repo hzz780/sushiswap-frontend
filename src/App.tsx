@@ -18,6 +18,8 @@ import FAQ from './views/FAQ'
 import Farms from './views/Farms'
 import Home from './views/Home'
 
+import { getEthChainInfo } from './utils/getEthChainInfo'
+
 import theme from './theme'
 
 const App: React.FC = () => {
@@ -53,18 +55,22 @@ const App: React.FC = () => {
   )
 }
 
+// https://infura.io/docs/gettingStarted/chooseaNetwork
+// https://www.anyblockanalytics.com/news/overview-ethereum-blockchain-networks/
 const Providers: React.FC = ({ children }) => {
+
+  const {
+    chainId,
+    rpcUrl
+  } = getEthChainInfo();
+
   return (
     <ThemeProvider theme={theme}>
       <UseWalletProvider
-        chainId={1}
+        chainId={chainId}
         connectors={{
-          walletconnect: { rpcUrl: 'https://mainnet.eth.aragon.network/' },
+          walletconnect: { rpcUrl },
         }}
-        // chainId={42}
-        // connectors={{
-        //   walletconnect: { rpcUrl: 'https://kovan.infura.io/' },
-        // }}
       >
         <YamProvider>
           <TransactionProvider>

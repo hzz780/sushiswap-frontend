@@ -46,6 +46,7 @@ export const getFarms = (sushi) => {
           tokenContract,
           lpAddress,
           lpContract,
+          pool,
         }) => ({
           pid,
           id: symbol,
@@ -56,9 +57,11 @@ export const getFarms = (sushi) => {
           tokenAddress,
           tokenSymbol,
           tokenContract,
-          earnToken: 'sushi',
+          // earnToken: 'sushi',
+          earnToken: 'sashimi',
           earnTokenAddress: sushi.contracts.sushi.options.address,
           icon,
+          pool,
         }),
       )
     : []
@@ -77,7 +80,7 @@ export const getPoolWeight = async (masterChefContract, pid) => {
 }
 
 export const getEarned = async (masterChefContract, pid, account) => {
-  return masterChefContract.methods.pendingSushi(pid, account).call()
+  return masterChefContract.methods.pendingSashimi(pid, account).call()
 }
 
 export const getTotalLPWethValue = async (

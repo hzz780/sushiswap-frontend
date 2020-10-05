@@ -11,11 +11,17 @@ const Nav: React.FC = () => {
       <StyledLink exact activeClassName="active" to="/farms">
         Menu
       </StyledLink>
+      {/*<StyledAbsoluteLink*/}
+      {/*  href="https://medium.com/sushiswap/the-sushiswap-project-c4049ea9941e"*/}
+      {/*  target="_blank"*/}
+      {/*>*/}
+      {/*  About*/}
+      {/*</StyledAbsoluteLink>*/}
       <StyledAbsoluteLink
-        href="https://medium.com/sushiswap/the-sushiswap-project-c4049ea9941e"
+        href="https://snapshot.sashimi.cool/#/sashimi"
         target="_blank"
       >
-        About
+          Proposals
       </StyledAbsoluteLink>
     </StyledNav>
   )
